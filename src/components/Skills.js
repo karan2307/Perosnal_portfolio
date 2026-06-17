@@ -28,24 +28,7 @@ const Skills = () => {
         { name: 'SQL', level: 95 },
       ]
     },
-    // {
-    //   title: 'UI/UX Design',
-    //   icon: <BrushIcon sx={{ fontSize: 40, color: 'error.main' }} />,
-    //   skills: [
-    //     { name: 'Material-UI', level: 85 },
-    //     { name: 'Responsive Design', level: 88 },
-    //     { name: 'Figma', level: 70 },
-    //   ]
-    // },
-    // {
-    //   title: 'Tools & Others',
-    //   icon: <BuildIcon sx={{ fontSize: 40, color: 'success.main' }} />,
-    //   skills: [
-    //     { name: 'Git', level: 85 },
-    //     { name: 'Docker', level: 70 },
-    //     { name: 'AWS', level: 65 },
-    //   ]
-    // }
+    
   ];
 
   const containerVariants = {
