@@ -1,17 +1,27 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Container, Typography, Box, TextField, Button, Grid, Paper } from '@mui/material';
 import { motion } from 'framer-motion';
+import emailjs from '@emailjs/browser';
 import EmailIcon from '@mui/icons-material/Email';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import PhoneIcon from '@mui/icons-material/Phone';
 
 const Contact = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: ''
+  });
+  const [statusMessage, setStatusMessage] = useState('');
+  const [isSending, setIsSending] = useState(false);
+
   const contactInfo = [
     {
       icon: <EmailIcon sx={{ fontSize: 40 }} />,
       title: 'Email',
       detail: 'karankpatel@gmail.com',
-      link: 'mailto:your.email@example.com'
+      link: 'mailto:karankpatel@gmail.com'
     },
     {
       icon: <LocationOnIcon sx={{ fontSize: 40 }} />,
@@ -22,9 +32,48 @@ const Contact = () => {
       icon: <PhoneIcon sx={{ fontSize: 40 }} />,
       title: 'Phone',
       detail: '9819890868',
-      link: 'tel:+1234567890'
+      link: 'tel:+919819890868'
     }
   ];
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    if (!formData.name || !formData.email || !formData.subject || !formData.message) {
+      setStatusMessage('Please fill in all fields before sending.');
+      return;
+    }
+
+    setIsSending(true);
+    setStatusMessage('Sending message...');
+
+    try {
+      const serviceId = 'service_lss1tdn';
+      const templateId = 'template_iurb8ii';
+      const publicKey = 'BYAKlzqCjqbO48gVT';
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        subject: formData.subject,
+        message: formData.message
+      };
+
+      await emailjs.send(serviceId, templateId, templateParams, publicKey);
+
+      setStatusMessage('Message sent successfully! I will reply soon.');
+      setFormData({ name: '', email: '', subject: '', message: '' });
+    } catch (error) {
+      console.error('Email send error:', error);
+      setStatusMessage(`Unable to send message right now. ${error?.text || error?.message || ''}`);
+    } finally {
+      setIsSending(false);
+    }
+  };
 
   return (
     <Box 
@@ -119,29 +168,32 @@ const Contact = () => {
                   backdropFilter: 'blur(10px)'
                 }}
               >
-                <Box component="form" noValidate>
+                <Box component="form" onSubmit={handleSubmit} noValidate>
                   <Grid container spacing={3}>
                     <Grid item xs={12} sm={6}>
                       <TextField
                         required
                         fullWidth
                         label="Name"
+                        name="name"
+                        value={formData.name}
+                        onChange={handleChange}
                         variant="outlined"
                         sx={{
                           '& .MuiOutlinedInput-root': {
                             '& fieldset': {
-                              borderColor: 'rgba(255, 255, 255, 0.3)',
+                              borderColor: 'rgba(255, 255, 255, 0.3)'
                             },
                             '&:hover fieldset': {
-                              borderColor: 'rgba(255, 255, 255, 0.5)',
-                            },
+                              borderColor: 'rgba(255, 255, 255, 0.5)'
+                            }
                           },
                           '& .MuiInputLabel-root': {
-                            color: 'rgba(255, 255, 255, 0.7)',
+                            color: 'rgba(255, 255, 255, 0.7)'
                           },
                           '& .MuiInputBase-input': {
-                            color: 'white',
-                          },
+                            color: 'white'
+                          }
                         }}
                       />
                     </Grid>
@@ -150,22 +202,25 @@ const Contact = () => {
                         required
                         fullWidth
                         label="Email"
+                        name="email"
+                        value={formData.email}
+                        onChange={handleChange}
                         variant="outlined"
                         sx={{
                           '& .MuiOutlinedInput-root': {
                             '& fieldset': {
-                              borderColor: 'rgba(255, 255, 255, 0.3)',
+                              borderColor: 'rgba(255, 255, 255, 0.3)'
                             },
                             '&:hover fieldset': {
-                              borderColor: 'rgba(255, 255, 255, 0.5)',
-                            },
+                              borderColor: 'rgba(255, 255, 255, 0.5)'
+                            }
                           },
                           '& .MuiInputLabel-root': {
-                            color: 'rgba(255, 255, 255, 0.7)',
+                            color: 'rgba(255, 255, 255, 0.7)'
                           },
                           '& .MuiInputBase-input': {
-                            color: 'white',
-                          },
+                            color: 'white'
+                          }
                         }}
                       />
                     </Grid>
@@ -174,22 +229,25 @@ const Contact = () => {
                         required
                         fullWidth
                         label="Subject"
+                        name="subject"
+                        value={formData.subject}
+                        onChange={handleChange}
                         variant="outlined"
                         sx={{
                           '& .MuiOutlinedInput-root': {
                             '& fieldset': {
-                              borderColor: 'rgba(255, 255, 255, 0.3)',
+                              borderColor: 'rgba(255, 255, 255, 0.3)'
                             },
                             '&:hover fieldset': {
-                              borderColor: 'rgba(255, 255, 255, 0.5)',
-                            },
+                              borderColor: 'rgba(255, 255, 255, 0.5)'
+                            }
                           },
                           '& .MuiInputLabel-root': {
-                            color: 'rgba(255, 255, 255, 0.7)',
+                            color: 'rgba(255, 255, 255, 0.7)'
                           },
                           '& .MuiInputBase-input': {
-                            color: 'white',
-                          },
+                            color: 'white'
+                          }
                         }}
                       />
                     </Grid>
@@ -198,28 +256,38 @@ const Contact = () => {
                         required
                         fullWidth
                         label="Message"
+                        name="message"
+                        value={formData.message}
+                        onChange={handleChange}
                         multiline
                         rows={4}
                         variant="outlined"
                         sx={{
                           '& .MuiOutlinedInput-root': {
                             '& fieldset': {
-                              borderColor: 'rgba(255, 255, 255, 0.3)',
+                              borderColor: 'rgba(255, 255, 255, 0.3)'
                             },
                             '&:hover fieldset': {
-                              borderColor: 'rgba(255, 255, 255, 0.5)',
-                            },
+                              borderColor: 'rgba(255, 255, 255, 0.5)'
+                            }
                           },
                           '& .MuiInputLabel-root': {
-                            color: 'rgba(255, 255, 255, 0.7)',
+                            color: 'rgba(255, 255, 255, 0.7)'
                           },
                           '& .MuiInputBase-input': {
-                            color: 'white',
-                          },
+                            color: 'white'
+                          }
                         }}
                       />
                     </Grid>
                   </Grid>
+
+                  {statusMessage && (
+                    <Typography sx={{ mt: 2, color: 'white', textAlign: 'center' }}>
+                      {statusMessage}
+                    </Typography>
+                  )}
+
                   <motion.div
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
@@ -227,6 +295,7 @@ const Contact = () => {
                     <Button
                       type="submit"
                       fullWidth
+                      disabled={isSending}
                       variant="contained"
                       sx={{
                         mt: 4,
@@ -234,11 +303,11 @@ const Contact = () => {
                         py: 1.5,
                         bgcolor: 'secondary.main',
                         '&:hover': {
-                          bgcolor: 'secondary.dark',
-                        },
+                          bgcolor: 'secondary.dark'
+                        }
                       }}
                     >
-                      Send Message
+                      {isSending ? 'Sending...' : 'Send Message'}
                     </Button>
                   </motion.div>
                 </Box>

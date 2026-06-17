@@ -8,19 +8,27 @@ import CodeIcon from '@mui/icons-material/Code';
 const Projects = () => {
   const projects = [
     {
-      title: "WeConnect",
-      description: "WeConnect is a centralized platform that facilitates collaboration among NGOs by providing tools for project management, resource sharing, and communication.",
-      image: "https://currentaffairs.adda247.com/wp-content/uploads/multisite/sites/5/2024/08/28164754/NGO-Full-Form.png",
-      technologies: ["React", "Node.js", "MongoDB", "Express"],
-      github: "https://github.com/karan2307",
+      title: "Brand2Parent",
+      description: "A full-stack web application that helps retail investors discover the true corporate ownership behind products and brands they use every day.",
+      image: "https://imgs.search.brave.com/5trXqw5N6QDLJCDk5g55v7bURHkHYTFdSX1Tf00szho/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMTMw/ODIyNTM5OC9waG90/by9tYXJrZXQtYW5h/bHl6ZS13aXRoLWRp/Z2l0YWwtbW9uaXRv/ci1mb2N1cy1vbi10/aXAtb2YtZmluZ2Vy/LmpwZz9zPTYxMng2/MTImdz0wJms9MjAm/Yz0zRkd3NEhDYVk2/R3FZVzhScUZrN1Fz/UHRaaHFueVNfMklh/MU9hUUpSMzFJPQ",
+      technologies: ["Java", "Node.js", "Springboot", "React.js"],
+      github: "https://github.com/karan2307/brand2parent",
       
     },
     {
-      title: "Placement Predictor",
-      description: "Developed and deployed a machine learning model to predict student placements ",
-      image: "https://www.brainwareuniversity.ac.in/images/career-employbility.jpg",
-      technologies: ['HTML', "Flask", "Machine Learning"],
-      github: "https://github.com/karan2307",
+      title: "PregaNewz",
+      description: "A web application that provides personalized pregnancy-related news and information to expectant mothers based on their due date and preferences.",
+      image: "https://imgs.search.brave.com/HOp-8bgtjemzl-sS00m1J7AY7eP9840rdr520y2WVZY/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMTY4/NDM5ODUwMS92ZWN0/b3IvaGVhbHRoLWNh/cmUtZm9yLXdvbWVu/LW9mLXJlcHJvZHVj/dGl2ZS1hZ2UuanBn/P3M9NjEyeDYxMiZ3/PTAmaz0yMCZjPUdF/S0lIY1pSbk9PUlky/STNGNFBMcXVlZDNP/QTFlVnV1SGNnRmtP/clR2OU09",
+      technologies: ['HTML', "React.js", "Chatbot"],
+      github: "https://github.com/karan2307/PregaNewz",
+      
+    },
+    {
+      title: "Donation Tracker",
+      description: "A web application that helps users track and manage their donations to various charitable organizations.",
+      image: "https://imgs.search.brave.com/QI2gtBDxMkHmR2JjmRyVpro9giq1R2j0vBjEFCGpeiU/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9zdGF0/aWMudmVjdGVlenku/Y29tL3N5c3RlbS9y/ZXNvdXJjZXMvdGh1/bWJuYWlscy8wMDEv/ODgwLzA0OS9zbWFs/bC92b2x1bnRlZXJz/LWNvbGxlY3Rpbmct/ZG9uYXRpb25zLWZv/ci1jaGFyaXR5LWZy/ZWUtdmVjdG9yLmpw/Zw",
+      technologies: ['Django'],
+      github: "https://github.com/karan2307/Yuva",
       
     },
     // Add more projects

@@ -20,9 +20,9 @@ const About = () => {
   const experience = [
     {
       position: "Software Developer",
-      company: "Company Name",
+      company: "SBI GEBERAL INSURANCE COMPANY LIMITED",
       year: "2023 - Present",
-      description: "Working on full-stack development using React and Node.js"
+      description: "Application Manager as a Graduate Trainee"
     }
     // Add more experience items
   ];

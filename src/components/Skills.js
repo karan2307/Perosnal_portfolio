@@ -22,30 +22,30 @@ const Skills = () => {
       title: 'Backend Development',
       icon: <StorageIcon sx={{ fontSize: 40, color: 'secondary.main' }} />,
       skills: [
-        { name: 'Node.js', level: 82 },
-        { name: 'Express.js', level: 80 },
-        { name: 'MongoDB', level: 75 },
+        { name: 'Python', level: 85 },
+        { name: 'Django', level: 80 },
+        { name: 'Springboot', level: 40 },
         { name: 'SQL', level: 95 },
       ]
     },
-    {
-      title: 'UI/UX Design',
-      icon: <BrushIcon sx={{ fontSize: 40, color: 'error.main' }} />,
-      skills: [
-        { name: 'Material-UI', level: 85 },
-        { name: 'Responsive Design', level: 88 },
-        { name: 'Figma', level: 70 },
-      ]
-    },
-    {
-      title: 'Tools & Others',
-      icon: <BuildIcon sx={{ fontSize: 40, color: 'success.main' }} />,
-      skills: [
-        { name: 'Git', level: 85 },
-        { name: 'Docker', level: 70 },
-        { name: 'AWS', level: 65 },
-      ]
-    }
+    // {
+    //   title: 'UI/UX Design',
+    //   icon: <BrushIcon sx={{ fontSize: 40, color: 'error.main' }} />,
+    //   skills: [
+    //     { name: 'Material-UI', level: 85 },
+    //     { name: 'Responsive Design', level: 88 },
+    //     { name: 'Figma', level: 70 },
+    //   ]
+    // },
+    // {
+    //   title: 'Tools & Others',
+    //   icon: <BuildIcon sx={{ fontSize: 40, color: 'success.main' }} />,
+    //   skills: [
+    //     { name: 'Git', level: 85 },
+    //     { name: 'Docker', level: 70 },
+    //     { name: 'AWS', level: 65 },
+    //   ]
+    // }
   ];
 
   const containerVariants = {
