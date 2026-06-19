@@ -22,7 +22,7 @@ const About = () => {
       position: "Software Developer",
       company: "SBI GEBERAL INSURANCE COMPANY LIMITED",
       year: "2023 - Present",
-      description: "Application Manager as a Graduate Trainee"
+      description: "Assistant Application Manager"
     }
     // Add more experience items
   ];
