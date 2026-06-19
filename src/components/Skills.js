@@ -3,8 +3,8 @@ import { Container, Typography, Box, Grid, Paper, LinearProgress } from '@mui/ma
 import { motion } from 'framer-motion';
 import CodeIcon from '@mui/icons-material/Code';
 import StorageIcon from '@mui/icons-material/Storage';
-import BrushIcon from '@mui/icons-material/Brush';
-import BuildIcon from '@mui/icons-material/Build';
+// import BrushIcon from '@mui/icons-material/Brush';
+// import BuildIcon from '@mui/icons-material/Build';
 
 const Skills = () => {
   const skillCategories = [

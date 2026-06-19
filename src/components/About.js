@@ -3,7 +3,7 @@ import { Container, Typography, Box, Grid, Paper, Avatar, Chip } from '@mui/mate
 import { motion } from 'framer-motion';
 import SchoolIcon from '@mui/icons-material/School';
 import WorkIcon from '@mui/icons-material/Work';
-import CodeIcon from '@mui/icons-material/Code';
+// import CodeIcon from '@mui/icons-material/Code';
 import PersonIcon from '@mui/icons-material/Person';
 
 const About = () => {
